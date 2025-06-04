@@ -1,0 +1,15 @@
+services:
+  ocserv:
+    build:
+      context:  .
+      dockerfile: Dockerfile
+    environment:
+      USERNAME: ${USERNAME}
+      PASS: ${PASS}
+      CERT_FINGERPRINT: ${CERT_FINGERPRINT}
+    container_name: ocserv
+    restart: always
+    ports:
+      - 443:443
+    cap_add:
+      - NET_ADMIN

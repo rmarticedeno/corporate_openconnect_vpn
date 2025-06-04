@@ -1,0 +1,5 @@
+.env
+.git/
+.env.example
+DockerFile
+docker-compose.yml
