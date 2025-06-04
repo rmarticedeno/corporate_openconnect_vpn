@@ -1,10 +1,10 @@
 #!/usr/bin/expect
-set USER [lindex $argv 0]
+set USERNAME [lindex $argv 0]
 set PASS [lindex $argv 1]
 set timeout 1
-spawn ocpasswd -c /etc/ocserv/ocpasswd $USER
+spawn ocpasswd -c /etc/ocserv/ocpasswd $USERNAME
 expect "Enter password:\r"
-send -- "$PASS\r"
+send -- "$PASS\n"
 expect "Re-enter password:\r"
-send -- "$PASS\r"
+send -- "$PASS\n"
 expect eof
